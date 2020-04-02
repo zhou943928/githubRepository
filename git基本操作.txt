@@ -37,7 +37,7 @@ git commit -m "提交1.txt文件"
 	merge = refs/heads/master
 
 12.推送到github
-git push 
+git push origin master
 13.从gitHub上更新内容
 git pull
 
