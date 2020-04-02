@@ -1,0 +1,73 @@
+1.创建一个空的文件夹（本地仓库）
+mkdir temp
+2.CMD 进入文件夹
+cd temp
+3.设置用户名
+git config --global user.name 'zhou943928'
+4.设置用户名邮箱 密码：zhou123123..
+git config --global user.email '943928950@qq.com'
+5.创建git仓库文件夹
+mkdir localRepository
+6.进入git仓库文件夹，初始化仓库
+cd localRepository
+git init
+7.创建文件
+touch 1.txt
+echo '测试内容'>>1.txt
+cat 1.txt
+8.添加文件到暂存区/删除文件到暂存区
+git add 1.txt                    git rm 1.txt
+9.查看暂存区状态
+git status
+10.提交文件到git仓库
+git commit -m "提交1.txt文件"
+11.修改隐藏文件夹.git下的config文件内容 ,此步骤只需做一次
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = https://github.com/zhou943928/myRepository.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+
+12.推送到github
+git push 
+13.从gitHub上更新内容
+git pull
+
+
+
+如果是从gitHub上下载新项目
+上面前6个步骤不变
+
+7.修改隐藏文件夹.git下的config文件内容 ,此步骤只需做一次,若是项目上肯定会给相应的权限的
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = https://github.com/zhou943928/myRepository.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+
+8.从gitHub上复制路径
+类似于：git@github.com:zhou943928/myRepository.git
+9.执行拷贝指令
+git clone git@github.com:zhou943928/myRepository.git
+
+
+
+
+
+
